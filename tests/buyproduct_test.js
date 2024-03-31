@@ -23,7 +23,6 @@ productPage.selectColor()
 productPage.addtoCart()
 productPage.verifyAddToCart()
 productPage.clickCart()
-//const productPrice = await productPage.pullPrice(productPage.price)
 I.proceedToCheckout()
 I.amOnPage('https://magento.softwaretestingboard.com/checkout/#shipping');
 productPage.fillShippingForm(ADDRESS)

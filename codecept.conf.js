@@ -19,13 +19,15 @@ exports.config = {
       url: 'http://localhost',
       show: true,
       waitForNavigation: 'networkidle',
-      wiatForTimeout: 5000
+      wiatForTimeout: 10000
     }
   },
   include: {
     I: './steps_file.js',
 
     basePage: "./pages/base.js",
+
+    productPage: "./pages/product.js",
   },
   name: 'codecept'
 }

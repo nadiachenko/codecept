@@ -8,7 +8,6 @@ password: '1234Qwer()',
 };
 
 Scenario('register',  ({ I, basePage }) => {
-I.amOnPage('https://magento.softwaretestingboard.com/');
 basePage.clickRegister();
 basePage.verifyRegisterTitle();
 basePage.fillRegisterForm(NEW_USER);

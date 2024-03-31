@@ -8,7 +8,7 @@ emailField:{xpath: '/html/body/div[2]/main/div[3]/div/form/fieldset[2]/div[1]/di
 passField:{xpath: '/html/body/div[2]/main/div[3]/div/form/fieldset[2]/div[2]/div/input'}, 
 confirmPassField:{xpath: '/html/body/div[2]/main/div[3]/div/form/fieldset[2]/div[3]/div/input'}, 
 
- clickRegister() {
+clickRegister() {
   I.click(this.registerLink);
  },
 
