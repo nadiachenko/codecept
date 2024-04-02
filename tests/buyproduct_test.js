@@ -15,8 +15,8 @@ const ADDRESS = {
 Feature('buyproduct');
 
 
-
 Scenario('buyproduct @buyproduct', async ({ I, productPage }) => {
+
 I.amOnPage('https://magento.softwaretestingboard.com/');
 I.login(USER);
 I.amOnPage('https://magento.softwaretestingboard.com/portia-capri.html');
