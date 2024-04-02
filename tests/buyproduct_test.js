@@ -14,7 +14,7 @@ const ADDRESS = {
 
 Feature('buyproduct');
 
-Scenario('buyproduct @buyproduct', async ({ I, productPage }) => {
+Scenario('buyproduct @buyproduct', async ({ I, productPage, cartPage }) => {
 I.amOnPage('https://magento.softwaretestingboard.com/');
 I.login(USER);
 I.amOnPage('https://magento.softwaretestingboard.com/portia-capri.html');
@@ -37,4 +37,5 @@ pause();
 
 
 
+//npx codeceptjs run --grep '@buyproduct'
 //npx codeceptjs run --grep '@buyproduct'
