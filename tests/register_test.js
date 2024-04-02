@@ -15,3 +15,4 @@ basePage.submitRegisterForm();
 basePage.verifyRegisterSuccess();
 pause();
 });
+//npx
