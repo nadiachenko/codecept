@@ -11,17 +11,20 @@ const ADDRESS = {
     postcode: '33139',
     phone: '(305) 534-3676'
     };
+    
+    let productLink = new DataTable(['productLink']);
+    let productLinks = ['pierce-gym-short.html', 'deirdre-relaxed-fit-capri.html'];
+
 
 Feature('buyproduct');
 
-
-Scenario('buyproduct @buyproduct', async ({ I, productPage }) => {
+Data(productLinks).Scenario('buyproduct @buyproduct', async ({ I, productPage, current }) => {
 
 I.amOnPage('https://magento.softwaretestingboard.com/');
 I.login(USER);
-I.amOnPage('https://magento.softwaretestingboard.com/portia-capri.html');
-productPage.selectSize()
-productPage.selectColor()
+I.amOnPage('https://magento.softwaretestingboard.com/' + current);
+//console.log(await productPage.checkColorExist())
+await productPage.selectVariations()
 productPage.addtoCart()
 productPage.verifyAddToCart()
 productPage.clickCart()
@@ -33,11 +36,14 @@ const priceSubtotal = await productPage.pullPrice(productPage.priceSubtotal)
 const priceShipping = await productPage.pullPrice(productPage.priceShipping)
 const priceTotal = await productPage.pullPrice(productPage.priceTotal)
 const totalPrice = priceSubtotal + priceShipping;
-pause();
+
 });
+Scenario('convertprice', async ({ I }) => {
+
+    const currency = (await I.sendGetRequest('/exchange?valcode=USD&json')).data[0].rate;
+    console.log(currency)
+    }).tag("convert");
+    
 
 
-
-
-//npx codeceptjs run --grep '@buyproduct'
 //npx codeceptjs run --grep '@buyproduct'

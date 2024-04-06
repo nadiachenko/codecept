@@ -431,6 +431,7 @@
     "mitt": "^3.0.0",
     "mkdirp": "^1.0.4",
     "mkdirp-classic": "^0.5.3",
+    "mochawesome": "^7.1.3",
     "moment": "^2.30.1",
     "monocart-code-viewer": "^1.1.2",
     "monocart-coverage-reports": "^2.7.1",

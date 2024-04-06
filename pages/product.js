@@ -2,8 +2,8 @@ const { I } = inject();
 
 module.exports = {
 
-  productSize: { xpath: '//div[@option-label="28"]'},
-  productColor: { xpath: '//div[@option-label="Blue"]'},
+  size: { xpath: '//div[@class="swatch-option text"][1]'},
+  productColor: { xpath: '//div[@class="swatch-option color"][1]'},
   addtoCartBtn: { xpath: '//button[@id="product-addtocart-button"]'},
   cart: {xpath: '//span[@class="text"]'},
   title: {xpath: '//span[contains(text(), "Add to Cart")]'},
@@ -21,12 +21,14 @@ module.exports = {
 
 
 
-selectSize() {
-  I.click(this.productSize);
- },
 
- selectColor() {
+async selectVariations() {
+  if (await this.checkColorExist()){  
+  I.click(this.size);
   I.click(this.productColor);
+}else {
+  console.log("Color and size options not found.");
+}
  },
 
  addtoCart() {
@@ -59,5 +61,7 @@ clickNext() {
   const priceNumber = parseFloat(priceString.replace(/[^\d.-]/g, ''));
   return priceNumber;
 },
-
+async checkColorExist() {
+  return Boolean(await I.grabNumberOfVisibleElements(this.size))
+ },
 }
